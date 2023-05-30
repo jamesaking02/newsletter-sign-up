@@ -6,9 +6,7 @@ const form = document.querySelector(".signup-form")
 const successPage = document.querySelector(".success")
 const img = document.querySelector(".illustration-img")
 const desktopImg = document.querySelector(".desktop-img")
-const desktop = window.matchMedia("(width >= 900px)")
 let valid = true
-// emailInput.style.setProperty("--empty-color", "hsl(4, 100%, 95%)")
 
 function invalid() {
   if (emailInput.value.match(validRegex)) {
@@ -29,7 +27,6 @@ function confirmation() {
     successPage.classList.remove("hidden")
     form.classList.add("hidden")
     img.classList.add("hidden")
-    // desktop.matches ? desktopImg.classList.add("hidden") : null
     document.querySelector(".success__icon").style.animation = 
     "iconAnimation .3s forwards"
     document.querySelector(".container").style.animation = 
@@ -40,7 +37,6 @@ function confirmation() {
     successPage.classList.add("hidden")
     form.classList.remove("hidden")
     img.classList.remove("hidden")
-    // desktop.matches ? desktopmg.classList.remove("hidden") : null
     emailInput.style.backgroundColor = "var(--white)"
   })
   emailInput.value = ""
