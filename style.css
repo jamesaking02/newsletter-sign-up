@@ -57,6 +57,19 @@ html body {
   }
 }
 
+@keyframes bttnBgColor {
+  from {
+    background-color: var(--dark-slate-grey);
+  }
+
+  to {
+    background: linear-gradient(to right, var(--raspberry), var(--tomato));
+    box-shadow: 
+    hsl(4, 100%, 85%) 0px 30px 60px -12px,
+    hsl(4, 100%, 85%) 0px 18px 36px -18px;
+  }
+}
+
 .illustration-img {
   --animation-time: .5s;
   -webkit-animation: slideDown var(--animation-time) forwards;
@@ -176,6 +189,8 @@ button {
   margin-bottom: 16rem;
 }
 
+
+
 button {
   display: block;
   background-color: var(--dark-slate-grey);
@@ -186,7 +201,9 @@ button {
 
 button:is(:hover, :focus) {
   cursor: pointer;
-  background: linear-gradient(to right, var(--raspberry), var(--tomato));
+  /* background: linear-gradient(to right, var(--raspberry), var(--tomato)); */
+  animation: bttnBgColor .7s forwards;
+  
 }
 
 @media only screen and (width > 900px) {
