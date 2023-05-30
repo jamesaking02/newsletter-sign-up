@@ -1,0 +1,240 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --raspberry: hsl(344, 100%, 65%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {box-sizing: border-box;}
+
+html body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark-slate-grey);
+}
+
+.hidden {
+  display: none;
+}
+
+/* SIGNUP STYLES */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.illustration-img {
+  --animation-time: .5s;
+  -webkit-animation: slideDown var(--animation-time) forwards;
+  -moz-animation: slideDown var(--animation-time) forwards;
+  animation: slideDown var(--animation-time) forwards;
+}
+
+.signup-form,
+.success {
+  padding: 1.5rem;
+}
+
+.signup-form__heading {
+  margin-top: 1rem;
+}
+
+.signup-form__heading,
+.success__heading {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.signup-form__heading,
+.signup-form__desc {
+  --animation-time: 1s;
+  -webkit-animation: fadeIn var(--animation-time) forwards;
+  -moz-animation: fadeIn var(--animation-time) forwards;
+  animation: fadeIn var(--animation-time) forwards;
+}
+
+.signup-form__desc {
+  line-height: 1.5;
+}
+
+.signup-form__updates {
+  list-style: none;
+  padding: 1.5rem;
+  padding-left: 0;
+  --animation-time: .5s;
+  -webkit-animation: slideIn var(--animation-time) forwards;
+  -moz-animation: slideIn var(--animation-time) forwards;
+  animation: slideIn var(--animation-time) forwards;
+}
+
+.signup-form__updates > li {
+  background-image: url(./assets/images/icon-list.svg);
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  line-height: 1.5;
+  margin-bottom: .5rem;
+}
+
+#email-label {
+  display: block;
+  font-size: .8rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+#email-input,
+button {
+  padding: 1.2rem;
+  width: 20rem;
+  border-radius: .5rem;
+  font-size: .95rem;
+}
+
+#email-input {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--grey);
+}
+
+#email-input:is(:focus) {
+  outline: 1px solid var(--charcoal-grey);
+}
+
+#email-input:is(:invalid) {
+  background-color: hsl(4, 100%, 95%);
+  outline-color: var(--tomato);
+}
+
+#email-input:empty {
+  background-color: var(--white);
+}
+
+/* CONFIRMATION PAGE STYLES */
+@keyframes iconAnimation {
+  from {
+    width: 0rem;
+  }
+
+  to {
+    width: 4rem;
+  }
+}
+
+@keyframes textAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.success {
+  padding-top: 8rem;
+}
+
+.success__icon {
+  margin-bottom: 2rem;
+}
+
+.success__confirmation {
+  line-height: 1.5;
+  margin-bottom: 16rem;
+}
+
+button {
+  display: block;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  border: none;
+  font-weight: 700;
+}
+
+button:is(:hover, :focus) {
+  cursor: pointer;
+  background: linear-gradient(to right, var(--raspberry), var(--tomato));
+}
+
+@media only screen and (width >= 900px) {
+  @keyframes slideInDesktop {
+    from {
+      transform: translateX(100%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  html body {
+    background-color: var(--dark-slate-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+  }
+  
+  main {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 55rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+
+  .signup-form {
+    padding: 3rem 2rem;
+  }
+
+  .illustration-img {
+    --animation-time: .5s;
+    -webkit-animation: slideInDesktop var(--animation-time) forwards;
+    -moz-animation: slideInDesktop var(--animation-time) forwards;
+    animation: slideInDesktop var(--animation-time) forwards;
+  }
+
+  #email-input,
+  button {
+    width: 22rem;
+  }
+
+  .success {
+    padding-top: 2rem;
+    width: 26rem;
+  }
+
+  .success__confirmation {
+    margin-bottom: 2rem;
+  }
+}
