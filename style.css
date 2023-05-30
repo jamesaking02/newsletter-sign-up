@@ -15,10 +15,15 @@
 html body {
   font-family: 'Roboto', sans-serif;
   color: var(--dark-slate-grey);
+  overflow-x: hidden;
 }
 
 .hidden {
   display: none;
+}
+
+.illustration-img {
+  width: 100%;
 }
 
 /* SIGNUP STYLES */
@@ -184,7 +189,7 @@ button:is(:hover, :focus) {
   background: linear-gradient(to right, var(--raspberry), var(--tomato));
 }
 
-@media only screen and (width >= 900px) {
+@media only screen and (width > 900px) {
   @keyframes slideInDesktop {
     from {
       transform: translateX(100%);
