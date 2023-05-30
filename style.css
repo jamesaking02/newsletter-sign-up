@@ -218,7 +218,7 @@ button:is(:hover, :focus) {
   }
 
   html body {
-    background-color: var(--dark-slate-grey);
+    background-color: var(--charcoal-grey);
     display: flex;
     justify-content: center;
     align-items: center;
